@@ -12,11 +12,12 @@ $(document).ready(main)
 function main(){
   // submit button event
   $('#submitButton').on('click',submit)
+  // delete button event
+  $('tbody').on('click','.deleteButton',onDeleteButtonClick);
 }
 
 // when the submit button is pressed...
 function submit(){
-  console.log('submit clicked!');
   // getter for all inputs
   first = $('#firstName').val();
   last = $('#lastName').val();
@@ -37,3 +38,8 @@ function submit(){
   </tr>
   `)
 };
+
+function onDeleteButtonClick(){
+  //delete row based on whatever button called the function using `this`
+  $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
+}
