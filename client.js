@@ -9,12 +9,12 @@ let total = 0;
 
 // on document ready...
 $(document).ready(main)
-// set up setters/getters
 function main(){
   // submit button event
   $('#submitButton').on('click',submit)
 }
 
+// when the submit button is pressed...
 function submit(){
   console.log('submit clicked!');
   // getter for all inputs
@@ -23,4 +23,17 @@ function submit(){
   id = $('#ID').val();
   title = $('#title').val();
   salary = $('#salary').val();
-}
+  // add inputs to table
+  $('tbody').append(`
+  <tr>
+    <td>` + first +`</td>
+    <td>` + last + `</td>
+    <td>` + id + `</td>
+    <td>` + title + `</td>
+    <td>` + salary + `</td>
+    <td>
+      <button class='deleteButton'>Delete</button>
+    </td>
+  </tr>
+  `)
+};
