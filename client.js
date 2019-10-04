@@ -1,4 +1,6 @@
 // init global variables
+let salary = []; // may not need. Try using .attr
+let total = 0;
 
 // on document ready...
 $(document).ready(main)
@@ -9,5 +11,4 @@ function main(){
 
 function submit(){
   console.log('submit clicked!');
-  
 }

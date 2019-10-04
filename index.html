@@ -9,6 +9,7 @@
   </head>
   <body>
     <h1>Salary Calculator</h1>
+    <!-- Set up fields for adding employee -->
     <h2>Add Employee</h2>
     <input class='inputs' id='firstName' placeholder="First name">
     <input class='inputs' id='lastName' placeholder="Last name">
@@ -16,5 +17,53 @@
     <input class='inputs' id='title' placeholder="Title">
     <input class='inputs' id='salary' placeholder="Annual salary">
     <button id='submitButton'>Submit</button>
+    <!-- Table below -->
+    <table>
+      <thead>
+          <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+            <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Jen</td>
+            <td>Barber</td>
+            <td>4521</td>
+            <td>Team Lead</td>
+            <td>$80,000</td>
+            <td>
+              <button class='deleteButton'>Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Maurice</td>
+            <td>Moss</td>
+            <td>8724</td>
+            <td>Support Team</td>
+            <td>$58,000</td>
+            <td>
+              <button class='deleteButton'>Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Roy</td>
+            <td>Smith</td>
+            <td>9623</td>
+            <td>Quality Assurance</td>
+            <td>$48,000</td>
+            <td>
+              <button class='deleteButton'>Delete</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <p>
+      Total Monthly: $<span id="total">0</span>
+    </p>
   </body>
 </html>
