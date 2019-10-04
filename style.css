@@ -8,3 +8,6 @@ h1 {
     background-color: gray;
     color: white;
   }
+  .inputs{
+      width: 75px;
+  }
