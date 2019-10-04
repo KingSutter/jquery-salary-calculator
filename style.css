@@ -1,0 +1,10 @@
+h1 {
+    margin: 0;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    width: 100%;
+    background-color: gray;
+    color: white;
+  }
