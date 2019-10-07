@@ -77,6 +77,7 @@ function onDeleteButtonClick(){
 }
 
 // will look into having each row color alternate
+// this will work for now
 function changeRowColors(){
   $("table tr:even").toggleClass("white");
   $("table tr:odd").toggleClass("gray");
