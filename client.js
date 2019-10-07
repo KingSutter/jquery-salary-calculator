@@ -6,6 +6,7 @@ let title = '';
 let salary = '';
 let salaryNum = 0;
 let total = 0;
+let monthlyTotal = 0;
 let sub = 0; // for subtracting total
 
 // on document ready...
@@ -15,7 +16,7 @@ function main(){
   $('#submitButton').on('click',submit);
   // delete button event
   $('tbody').on('click','.deleteButton',onDeleteButtonClick);
-  $('#total').text(total);
+  $('#total').text(monthlyTotal);
 }
 
 // when the submit button is pressed...
@@ -44,8 +45,9 @@ function submit(){
   `);
   // increase monthly salary total
   total += salaryNum;
+  monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
   // setter for updated total monthly
-  $('#total').text(total);
+  $('#total').text(monthlyTotal);
   // reset inputs 
   first = $('#firstName').val('');
   last = $('#lastName').val('');
@@ -53,7 +55,7 @@ function submit(){
   title = $('#title').val('');
   salary = $('#salary').val('');
   // if total is more than 20,000, add red background to total
-  if (total > 20000) {
+  if (monthlyTotal > 20000) {
     $('p').css('background-color','red');
   }
   // change rows colors to alternate
@@ -67,10 +69,11 @@ function onDeleteButtonClick(){
   $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
   // change total value respectively
   total -= sub;
+  monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
   // setter for updated total monthly
-  $('#total').text(total);
+  $('#total').text(monthlyTotal);
   // if total is less than or equal to 20,000, remove red background to total  
-  if (total <= 20000) {
+  if (monthlyTotal <= 20000) {
     $('p').css('background-color','white');
   }
   // change rows colors to alternate
