@@ -9,8 +9,8 @@ let total = 0;
 let monthlyTotal = 0;
 let sub = 0; // for subtracting total
 
+$(document).ready(main);
 // on document ready...
-$(document).ready(main)
 function main(){
   // submit button event
   $('#submitButton').on('click',submit);
@@ -46,6 +46,7 @@ function submit(){
   // increase monthly salary total
   total += salaryNum;
   monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
+  monthlyTotal = numberWithCommas(monthlyTotal);
   // setter for updated total monthly
   $('#total').text(monthlyTotal);
   // reset inputs 
@@ -59,7 +60,7 @@ function submit(){
     $('p').css('background-color','red');
   }
   // change rows colors to alternate
-  $(changeRowColors);
+  changeRowColors();
 }
 
 function onDeleteButtonClick(){
@@ -70,6 +71,7 @@ function onDeleteButtonClick(){
   // change total value respectively
   total -= sub;
   monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
+  monthlyTotal = numberWithCommas(monthlyTotal);
   // setter for updated total monthly
   $('#total').text(monthlyTotal);
   // if total is less than or equal to 20,000, remove red background to total  
@@ -77,7 +79,7 @@ function onDeleteButtonClick(){
     $('p').css('background-color','white');
   }
   // change rows colors to alternate
-  $(changeRowColors);
+  changeRowColors();
 }
 
 // will look into having each row color alternate
@@ -91,3 +93,8 @@ function changeRowColors(){
   $("#header").removeClass("white");
   $("#header").toggleClass("gray");
 }
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+} // from stackoverflow to add commas to number.
+// Really just an asthetic change here
