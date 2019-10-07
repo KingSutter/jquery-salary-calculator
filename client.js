@@ -4,14 +4,9 @@ let last = '';
 let id = '';
 let title = '';
 let salary = '';
+let salaryNum = '';
 let salaries = []; // may not need. Try using .attr
 let total = 0;
-let test = '$56, blue 0 $ 00';
-console.log(test.replace('$',''));
-var myStr = 'this,is,a,te$st';
-var newStr = myStr.replace(/[\$',']/g, '');
-
-console.log( newStr );  // "this-is-a-test"
 
 // on document ready...
 $(document).ready(main)
@@ -29,7 +24,10 @@ function submit(){
   last = $('#lastName').val();
   id = $('#ID').val();
   title = $('#title').val();
-  salary = $('#salary').val().replace('$,', '');
+  salary = $('#salary').val();
+  // this will strip salary of special characters
+  salaryNum = Number(salary.replace(/[\$',']/g, ''))
+  console.log(salaryNum); // test successful!
   // add inputs to table
   $('tbody').append(`
   <tr>
