@@ -51,10 +51,12 @@ function submit(){
   id = $('#ID').val('');
   title = $('#title').val('');
   salary = $('#salary').val('');
-  // if total > 20,000 add red background to total
+  // if total is more than 20,000, add red background to total
   if (total > 20000) {
     $('p').css('background-color','red');
   }
+  // change rows colors to alternate
+  $(changeRowColors);
 }
 
 function onDeleteButtonClick(){
@@ -66,10 +68,21 @@ function onDeleteButtonClick(){
   total -= sub;
   // setter for updated total monthly
   $('#total').text(total);
-  // if total < 20,000 remove red background to total
-  console.log(total);
-  
+  // if total is less than or equal to 20,000, remove red background to total  
   if (total <= 20000) {
     $('p').css('background-color','white');
   }
+  // change rows colors to alternate
+  $(changeRowColors);
+}
+
+// will look into having each row color alternate
+function changeRowColors(){
+  $("table tr:even").toggleClass("white");
+  $("table tr:odd").toggleClass("gray");
+  $("table tr:even").toggleClass("gray");
+  $("table tr:odd").toggleClass("white");
+  // header remains gray
+  $("#header").removeClass("white");
+  $("#header").toggleClass("gray");
 }

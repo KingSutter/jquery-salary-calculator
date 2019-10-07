@@ -8,17 +8,29 @@ h1 {
     background-color: gray;
     color: white;
   }
-  .inputs{
-      width: 75px;
-  }
+
+.inputs{
+    width: 75px;
+}
+
 table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
 }
+
 table{
     width: 100%;
 }
+
 p{
     /* since the page starts over budget */
     background-color: red;
+}
+
+.white {
+    background-color: white;
+}
+
+.gray {
+    background-color: lightgray;
 }
