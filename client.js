@@ -7,6 +7,7 @@ let salary = '';
 let salaryNum = 0;
 let total = 0;
 let monthlyTotal = 0;
+let monthlyTotalString = '0';
 let sub = 0; // for subtracting total
 
 $(document).ready(main);
@@ -16,7 +17,7 @@ function main(){
   $('#submitButton').on('click',submit);
   // delete button event
   $('tbody').on('click','.deleteButton',onDeleteButtonClick);
-  $('#total').text(monthlyTotal);
+  $('#total').text(monthlyTotalString);
 }
 
 // when the submit button is pressed...
@@ -46,9 +47,9 @@ function submit(){
   // increase monthly salary total
   total += salaryNum;
   monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
-  monthlyTotal = numberWithCommas(monthlyTotal);
+  monthlyTotalString = numberWithCommas(monthlyTotal);
   // setter for updated total monthly
-  $('#total').text(monthlyTotal);
+  $('#total').text(monthlyTotalString);
   // reset inputs 
   first = $('#firstName').val('');
   last = $('#lastName').val('');
@@ -71,9 +72,9 @@ function onDeleteButtonClick(){
   // change total value respectively
   total -= sub;
   monthlyTotal = Math.round((total / 12) * 100) / 100; // round to second decimal
-  monthlyTotal = numberWithCommas(monthlyTotal);
+  monthlyTotalString = numberWithCommas(monthlyTotal);
   // setter for updated total monthly
-  $('#total').text(monthlyTotal);
+  $('#total').text(monthlyTotalString);
   // if total is less than or equal to 20,000, remove red background to total  
   if (monthlyTotal <= 20000) {
     $('p').css('background-color','white');
