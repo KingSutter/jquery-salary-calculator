@@ -7,6 +7,6 @@
   - Employee ID
   - Position title
   - Annual salary
-- If the user's budget exceeds $20,000, the program will warn them by using a red highlight
+- If the user's monthly budget exceeds $20,000, the program will warn them by using a red highlight
 - Any employee may be deleted at any time using the delete button
 - Input is emptied after submitting data for new employee
