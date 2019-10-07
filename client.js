@@ -5,7 +5,7 @@ let id = '';
 let title = '';
 let salary = '';
 let salaryNum = 0;
-let total = 186000;
+let total = 0;
 let sub = 0; // for subtracting total
 
 // on document ready...
@@ -26,6 +26,7 @@ function submit(){
   id = $('#ID').val();
   title = $('#title').val();
   salary = $('#salary').val();
+  
   // this will strip salary of special characters
   salaryNum = Number(salary.replace(/[\$',']/g, ''));
   // add inputs to table
@@ -79,10 +80,10 @@ function onDeleteButtonClick(){
 // will look into having each row color alternate
 // this will work for now
 function changeRowColors(){
-  $("table tr:even").toggleClass("white");
-  $("table tr:odd").toggleClass("gray");
   $("table tr:even").toggleClass("gray");
   $("table tr:odd").toggleClass("white");
+  $("table tr:even").toggleClass("white");
+  $("table tr:odd").toggleClass("gray");
   // header remains gray
   $("#header").removeClass("white");
   $("#header").toggleClass("gray");
