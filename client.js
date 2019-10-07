@@ -15,6 +15,7 @@ function main(){
   $('#submitButton').on('click',submit)
   // delete button event
   $('tbody').on('click','.deleteButton',onDeleteButtonClick);
+  $('total').text(total);
 }
 
 // when the submit button is pressed...
@@ -43,6 +44,12 @@ function submit(){
   // increase total salaries
   total += salaryNum;
   console.log(total);
+  // reset inputs 
+  first = $('#firstName').val('');
+  last = $('#lastName').val('');
+  id = $('#ID').val('');
+  title = $('#title').val('');
+  salary = $('#salary').val('');
 };
 
 function onDeleteButtonClick(){
