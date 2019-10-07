@@ -1,9 +1,13 @@
-# Project Name
+# Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+## Description:
 
-## Description
-
-Your project description goes here. What problem did you solve? How did you solve it?
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+- Users can input employee information for any number of employees to calculate total monthly spending
+  - First and last name
+  - Employee ID
+  - Position title
+  - Annual salary
+- If their budget exceeds $20,000, the program will warn them using a red highlight
+- Any employee may be deleted at any time using the delete button
+- Input is emptied after submitting data for new employee
+- Initially, there will be three employees on the list to show a preview of how the list should look like
