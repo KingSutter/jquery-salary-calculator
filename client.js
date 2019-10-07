@@ -15,7 +15,7 @@ function main(){
   $('#submitButton').on('click',submit)
   // delete button event
   $('tbody').on('click','.deleteButton',onDeleteButtonClick);
-  $('total').text(total);
+  $('#total').text(total);
 }
 
 // when the submit button is pressed...
@@ -41,9 +41,10 @@ function submit(){
     </td>
   </tr>
   `)
-  // increase total salaries
+  // increase monthly salary total
   total += salaryNum;
-  console.log(total);
+  // setter for updated total monthly
+  //$('#total').text(total);
   // reset inputs 
   first = $('#firstName').val('');
   last = $('#lastName').val('');
@@ -58,5 +59,6 @@ function onDeleteButtonClick(){
   $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
   total -= sub;
   console.log(total);
-  
+  // setter for updated total monthly
+  //$('#total').text(total);
 }
