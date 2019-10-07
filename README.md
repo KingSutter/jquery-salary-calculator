@@ -1,5 +1,5 @@
 # Salary Calculator
-
+---
 ## Description:
 
 - Users can input employee information for any number of employees to calculate total monthly spending
