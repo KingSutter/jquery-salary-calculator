@@ -23,8 +23,8 @@ table{
 }
 
 p{
-    /* since the page starts over budget */
-    background-color: red;
+    /* since the page starts at 0 */
+    background-color: white;
 }
 
 .white {
