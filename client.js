@@ -12,7 +12,7 @@ let sub = 0; // for subtracting total
 $(document).ready(main)
 function main(){
   // submit button event
-  $('#submitButton').on('click',submit)
+  $('#submitButton').on('click',submit);
   // delete button event
   $('tbody').on('click','.deleteButton',onDeleteButtonClick);
   $('#total').text(total);
@@ -27,7 +27,7 @@ function submit(){
   title = $('#title').val();
   salary = $('#salary').val();
   // this will strip salary of special characters
-  salaryNum = Number(salary.replace(/[\$',']/g, ''))
+  salaryNum = Number(salary.replace(/[\$',']/g, ''));
   // add inputs to table
   $('tbody').append(`
   <tr>
@@ -40,7 +40,7 @@ function submit(){
       <button class='deleteButton' id='` + salaryNum + `'>Delete</button>
     </td>
   </tr>
-  `)
+  `);
   // increase monthly salary total
   total += salaryNum;
   // setter for updated total monthly
@@ -51,15 +51,25 @@ function submit(){
   id = $('#ID').val('');
   title = $('#title').val('');
   salary = $('#salary').val('');
-};
+  // if total > 20,000 add red background to total
+  if (total > 20000) {
+    $('p').css('background-color','red');
+  }
+}
 
 function onDeleteButtonClick(){
   // set sub to salary of deleted employee
   sub = Number($(this).attr('id'));
   //delete row based on whatever button called the function using `this`
   $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
+  // change total value respectively
   total -= sub;
-  console.log(total);
   // setter for updated total monthly
   $('#total').text(total);
+  // if total < 20,000 remove red background to total
+  console.log(total);
+  
+  if (total <= 20000) {
+    $('p').css('background-color','white');
+  }
 }

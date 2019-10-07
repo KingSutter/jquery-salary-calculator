@@ -18,3 +18,7 @@ table, th, td{
 table{
     width: 100%;
 }
+p{
+    /* since the page starts over budget */
+    background-color: red;
+}
