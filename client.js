@@ -4,9 +4,9 @@ let last = '';
 let id = '';
 let title = '';
 let salary = '';
-let salaryNum = '';
-let salaries = []; // may not need. Try using .attr
-let total = 0;
+let salaryNum = 0;
+let total = 186000;
+let sub = ''
 
 // on document ready...
 $(document).ready(main)
@@ -27,7 +27,6 @@ function submit(){
   salary = $('#salary').val();
   // this will strip salary of special characters
   salaryNum = Number(salary.replace(/[\$',']/g, ''))
-  console.log(salaryNum); // test successful!
   // add inputs to table
   $('tbody').append(`
   <tr>
@@ -37,18 +36,20 @@ function submit(){
     <td>` + title + `</td>
     <td class='annualSalary'>` + salary + `</td>
     <td>
-      <button class='deleteButton' id='` + salary + `'>Delete</button>
+      <button class='deleteButton' id='` + salaryNum + `'>Delete</button>
     </td>
   </tr>
   `)
+  // increase total salaries
+  total += salaryNum;
+  console.log(total);
 };
 
 function onDeleteButtonClick(){
   //delete row based on whatever button called the function using `this`
-  total = $(this).attr('id'); // this is supposed to get the salary value - is bugged
-  console.log($(this).closest ('tr').remove()); // closest goes up the tree and looks for `tr`
+  sub = Number($(this).attr('id')); // this is supposed to get the salary value - is bugged
+  $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
+  total -= sub;
   console.log(total);
-}
-// function getTotal(){
   
-// }
+}
