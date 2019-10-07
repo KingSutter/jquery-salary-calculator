@@ -6,7 +6,7 @@ let title = '';
 let salary = '';
 let salaryNum = 0;
 let total = 186000;
-let sub = ''
+let sub = 0; // for subtracting total
 
 // on document ready...
 $(document).ready(main)
@@ -44,7 +44,7 @@ function submit(){
   // increase monthly salary total
   total += salaryNum;
   // setter for updated total monthly
-  //$('#total').text(total);
+  $('#total').text(total);
   // reset inputs 
   first = $('#firstName').val('');
   last = $('#lastName').val('');
@@ -54,11 +54,12 @@ function submit(){
 };
 
 function onDeleteButtonClick(){
+  // set sub to salary of deleted employee
+  sub = Number($(this).attr('id'));
   //delete row based on whatever button called the function using `this`
-  sub = Number($(this).attr('id')); // this is supposed to get the salary value - is bugged
   $(this).closest ('tr').remove(); // closest goes up the tree and looks for `tr`
   total -= sub;
   console.log(total);
   // setter for updated total monthly
-  //$('#total').text(total);
+  $('#total').text(total);
 }
