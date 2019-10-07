@@ -31,9 +31,9 @@ function submit(){
     <td>` + last + `</td>
     <td>` + id + `</td>
     <td>` + title + `</td>
-    <td class='annualSalary'` + salary + `</td>
+    <td class='annualSalary'>` + salary + `</td>
     <td>
-      <button class='deleteButton'>Delete</button>
+      <button class='deleteButton' id='` + salary + `'>Delete</button>
     </td>
   </tr>
   `)
@@ -43,7 +43,8 @@ function onDeleteButtonClick(){
   //delete row based on whatever button called the function using `this`
   total = $(this).attr('id'); // this is supposed to get the salary value - is bugged
   console.log($(this).closest ('tr').remove()); // closest goes up the tree and looks for `tr`
-
-function getTotal(){
-  
+  console.log(total);
 }
+// function getTotal(){
+  
+// }
